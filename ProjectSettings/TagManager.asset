@@ -6,6 +6,7 @@ TagManager:
   tags:
   - pina
   - other
+  - CollectibleItem
   layers:
   - Default
   - TransparentFX
