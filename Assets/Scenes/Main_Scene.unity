@@ -33148,6 +33148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Hand Model
       objectReference: {fileID: 0}
+    - target: {fileID: 5686134208196863108, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: adb2f20aa957c364e9a392a9214ef5d6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51849,13 +51853,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 6
-  m_Radius: 0.1
+  m_Height: 2
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 3, z: 0}
+  m_MinMoveDistance: 5
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &1540764748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51869,14 +51873,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 1540764749}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 50
   m_EnableStrafe: 1
   m_EnableFly: 0
-  m_UseGravity: 1
-  m_GravityApplicationMode: 1
+  m_UseGravity: 0
+  m_GravityApplicationMode: 0
   m_ForwardSource: {fileID: 1002025376}
   m_LeftHandMoveAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Left Hand Move
       m_Type: 0
@@ -51888,7 +51892,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_RightHandMoveAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Right Hand Move
       m_Type: 0
@@ -66642,6 +66646,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1361564657}
     m_Modifications:
+    - target: {fileID: 109434732392105323, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: adb2f20aa957c364e9a392a9214ef5d6, type: 2}
     - target: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
       propertyPath: m_Name
       value: Left Hand Model
