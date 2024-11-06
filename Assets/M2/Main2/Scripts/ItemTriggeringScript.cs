@@ -6,7 +6,7 @@ using TMPro;  // Add this for TextMeshPro
 public class ItemTriggerZone : MonoBehaviour
 {
     public string collectibleTag = "CollectibleItem";
-    
+    public bool isSafe = true;  
     // Dictionary to store the names of items and their corresponding UI Images
     public Dictionary<string, Image> itemImages = new Dictionary<string, Image>();
     // Dictionary to store item names and their corresponding UI TextMeshPro components
@@ -47,6 +47,10 @@ public class ItemTriggerZone : MonoBehaviour
 
             // Destroy the item in the game world
             Destroy(other.gameObject);
+        }
+        else
+        {
+            isSafe = false;  
         }
     }
 }
