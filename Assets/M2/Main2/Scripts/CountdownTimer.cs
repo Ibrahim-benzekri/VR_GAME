@@ -5,12 +5,11 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    float currentTime = 30f;
-    float startingTime = 10f;
-
+    public float startingTime = 10f;
+    private float currentTime;
+    public bool isReady = false;
     public Text Counter;
-    public AnimationStateController characterController; // Reference to the character controller
-
+    
     void Start()
     {
         currentTime = startingTime;
@@ -19,21 +18,28 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
+        if (isReady) return; // Exit if already ready
+
+        // Update the timer
+        currentTime -= Time.deltaTime;
         Counter.text = currentTime.ToString("0");
 
-        if (currentTime <= 20)
-        {
-            Counter.color = Color.blue;
-        }
+        // Change the counter color based on time left
         if (currentTime <= 10)
         {
             Counter.color = Color.red;
         }
+        else if (currentTime <= 20)
+        {
+            Counter.color = Color.blue;
+        }
+
+        // Check if time has run out
         if (currentTime <= 0)
         {
             currentTime = 0;
-            characterController.StartMoving(); // Start character movement when timer reaches zero
+            isReady = true;
+            Debug.Log("Countdown Timer finished. isReady set to true.");
         }
     }
 }
