@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Required for scene management
+using UnityEngine.SceneManagement; 
 
 public class AnimationStateController : MonoBehaviour
 {
@@ -70,5 +70,7 @@ public class AnimationStateController : MonoBehaviour
         isRunning = false; // Set isRunning to false to stop movement
         transform.Translate(Vector3.zero); // Ensure no further movement by setting velocity to zero (or simply not moving)
         animator.SetBool("isRunning", isRunning); // Stop the running animation
+        SceneManager.LoadScene("GameOver");
+
     }
 }

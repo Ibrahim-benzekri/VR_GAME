@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;  // Add this for TextMeshPro
+using TMPro;  
+using UnityEngine.SceneManagement; 
+
 
 public class ItemTriggerZone : MonoBehaviour
 {
+    private int items = 0;
+    
     public string collectibleTag = "CollectibleItem";
     public bool isSafe = true;  
     // Dictionary to store the names of items and their corresponding UI Images
@@ -43,10 +47,16 @@ public class ItemTriggerZone : MonoBehaviour
                 // Optionally, remove the item references from dictionaries to keep them clean
                 itemImages.Remove(itemName);
                 itemTexts.Remove(itemName);
+
+                items +=1;
             }
 
             // Destroy the item in the game world
             Destroy(other.gameObject);
+
+            if (items==1){
+                SceneManager.LoadScene("Win");
+            }
         }
         else
         {
